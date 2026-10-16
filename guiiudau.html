@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Iu Dấu Của Tính - 20/10 Hạnh Phúc 💕</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Pacifico & Be Vietnam Pro -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background: linear-gradient(135deg, #ffd1dc 0%, #ff9ebb 50%, #ffc0cb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.25); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+        .heart-beat {
+            animation: heartbeat 1.4s infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 105, 180, 0.6);
+            animation: floatUp 6s linear infinite;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="relative flex flex-col items-center justify-center p-4">
+
+    <!-- HIỆU ỨNG TRÁI TIM BAY LƠ LỬNG BACKGROUND -->
+    <div id="floatingHeartsContainer" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+
+    <!-- MÀN HÌNH CHÀO MỪNG: TRÁI TIM BAN ĐẦU -->
+    <div id="welcomeScreen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-pink-200 via-pink-300 to-rose-300 transition-all duration-1000 p-4 text-center">
+        <div class="cursor-pointer group flex flex-col items-center" onclick="openMainContent()">
+            <div class="text-7xl md:text-9xl heart-beat drop-shadow-lg filter drop-shadow-[0_10px_15px_rgba(236,72,153,0.4)]">
+                💖
+            </div>
+            <h2 class="mt-6 text-2xl md:text-3xl font-pacifico text-rose-700 drop-shadow-md tracking-wide">
+                Gửi iu dấu của Tính
+            </h2>
+            <p class="mt-3 text-sm md:text-base text-rose-600 font-medium bg-white/60 px-6 py-2 rounded-full shadow-sm backdrop-blur-sm animate-bounce">
+                Nhấp vào trái tim để mở hộp quà ✨
+            </p>
+        </div>
+    </div>
+
+    <!-- NỘI DUNG CHÍNH CỦA TRANG WEB -->
+    <div id="mainContent" class="opacity-0 transition-opacity duration-1000 max-w-4xl w-full mx-auto z-10 py-8 hidden flex flex-col items-center">
+        
+        <!-- Tiêu đề -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-6xl font-pacifico text-rose-700 drop-shadow-md mb-3">
+                Chúc Mừng 20/10 Em Nhé! 🌹
+            </h1>
+            <p class="text-rose-800 text-lg md:text-xl font-medium">
+                Gửi người con gái tuyệt vời nhất trong lòng anh 💕
+            </p>
+        </header>
+
+        <!-- Khung Lời Chúc Ngọt Ngào -->
+        <section class="glass-card w-full rounded-3xl p-6 md:p-8 shadow-xl mb-8 text-center">
+            <h3 class="text-2xl font-bold text-rose-700 mb-4 font-pacifico">💌 Lời Trái Tim Muốn Nói</h3>
+            <textarea id="loveMessage" class="w-full h-36 p-4 rounded-2xl bg-white/80 border border-pink-200 text-gray-700 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-rose-400 resize-none shadow-inner" placeholder="Nhập lời chúc ngọt ngào của bạn vào đây..."> 20/10 này, Tính có nhiều điều muốn gửi đến iu dấu lắm á:33. Trước hết, chúc iu dấu có một ngày 20/10 thật là vui vẻ, hạnh phúc, chúc cho iu luôn xinh xinh và dễ thương. Sắp tới có lẽ iu dấu sẽ bận học quốc gia nhiều nhắm, nhưng mò nhớ phải giữ gìn sức khỏe đó nha! Tính chúc cho iu đạt giải cao như mình mong muốn nò. Tính làm iu buồn nhiều lắm ùi đúng hong... nhưng mò Tính hỏng muốn tí nào hết huhu. Tính sẽ cố gắng để hỏng làm iu buồn tí  nào nữa lun nho. Và cuối cùng Tính muốn nói là yêu yêu yêu chị Nhi nhìu nhắm ❤️</textarea>
+        </section>
+
+        <!-- Album Ảnh Kỷ Niệm (Có thể tải ảnh lên) -->
+        <section class="w-full mb-10">
+            <h3 class="text-2xl font-bold text-rose-700 text-center mb-6 font-pacifico">📸 Kỷ Niệm Đôi Ta</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Ảnh 1 -->
+                <div class="glass-card p-4 rounded-3xl shadow-lg flex flex-col items-center group">
+                    <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-pink-100 flex items-center justify-center border-2 border-dashed border-pink-300">
+                        <img id="imgPreview1" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80" alt="Kỷ niệm 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <label class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium cursor-pointer text-sm">
+                            Đổi Ảnh Này
+                            <input type="file" accept="image/*" class="hidden" onchange="previewImage(event, 'imgPreview1')">
+                        </label>
+                    </div>
+                    <p class="mt-3 text-rose-700 font-medium text-sm">Khoảnh khắc ngọt ngào ✨</p>
+                </div>
+
+                <!-- Ảnh 2 -->
+                <div class="glass-card p-4 rounded-3xl shadow-lg flex flex-col items-center group">
+                    <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-pink-100 flex items-center justify-center border-2 border-dashed border-pink-300">
+                        <img id="imgPreview2" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Kỷ niệm 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <label class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium cursor-pointer text-sm">
+                            Đổi Ảnh Này
+                            <input type="file" accept="image/*" class="hidden" onchange="previewImage(event, 'imgPreview2')">
+                        </label>
+                    </div>
+                    <p class="mt-3 text-rose-700 font-medium text-sm">Nụ cười của em 💖</p>
+                </div>
+
+                <!-- Ảnh 3 -->
+                <div class="glass-card p-4 rounded-3xl shadow-lg flex flex-col items-center group">
+                    <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-pink-100 flex items-center justify-center border-2 border-dashed border-pink-300">
+                        <img id="imgPreview3" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80" alt="Kỷ niệm 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <label class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium cursor-pointer text-sm">
+                            Đổi Ảnh Này
+                            <input type="file" accept="image/*" class="hidden" onchange="previewImage(event, 'imgPreview3')">
+                        </label>
+                    </div>
+                    <p class="mt-3 text-rose-700 font-medium text-sm">Mãi bên nhau nhé 🥰</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer chân trang -->
+        <footer class="text-center text-rose-800 font-medium text-sm py-4">
+            Made with 💖 by Tính for Người Yêu Dấu
+        </footer>
+    </div>
+
+    <!-- SCRIPT XỬ LÝ HIỆU ỨNG -->
+    <script>
+        // Tạo hiệu ứng trái tim bay nền động
+        function createFloatingHeart() {
+            const container = document.getElementById('floatingHeartsContainer');
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            container.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+        setInterval(createFloatingHeart, 400);
+
+        // Mở màn hình chính khi nhấp vào trái tim ban đầu
+        function openMainContent() {
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const mainContent = document.getElementById('mainContent');
+
+            welcomeScreen.style.opacity = '0';
+            setTimeout(() => {
+                welcomeScreen.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                setTimeout(() => {
+                    mainContent.style.opacity = '1';
+                }, 50);
+            }, 800);
+        }
+
+        // Tải ảnh cá nhân hóa
+        function previewImage(event, previewId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewId).src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
